@@ -1,4 +1,4 @@
-import { CityResponse, ForecastResponse } from '@/types';
+import { CityResponse, CurrentWeather, ForecastResponse } from '@/types';
 import { apiFetch } from './utils';
 
 export function findCities(q: string) {
@@ -7,8 +7,14 @@ export function findCities(q: string) {
   });
 }
 
-export function getWeatherByCityId(id: number) {
+export function getWeatherForecastByCityId(id: number) {
   return apiFetch<ForecastResponse>('/forecast', {
+    params: { id },
+  });
+}
+
+export function getCurrentWeatherByCityId(id: number) {
+  return apiFetch<CurrentWeather>('/weather', {
     params: { id },
   });
 }

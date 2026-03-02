@@ -112,3 +112,27 @@ export interface CityMainWeather {
 export interface CitySys {
   country: string;
 }
+
+export interface CurrentWeather {
+  coord: Coordinates;
+  weather: Weather[];
+  base: string;
+  main: CityMainWeather;
+  visibility: number;
+  wind: Wind;
+  clouds: Clouds;
+  dt: number;
+  sys: CurrentWeatherSys;
+  timezone: number;
+  id: number;
+  name: string;
+  cod: number;
+}
+
+export interface CurrentWeatherSys {
+  type: number;
+  id: number;
+  country: string;
+  sunrise: number;
+  sunset: number;
+}
